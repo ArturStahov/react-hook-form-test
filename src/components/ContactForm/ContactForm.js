@@ -38,9 +38,12 @@ const useStyles = makeStyles(theme => ({
 
 function ContactsForm({ onAddContact }) {
   const classes = useStyles();
-  const { register, handleSubmit, watch, errors, control } = useForm();
+  const { register, handleSubmit, watch, errors, control, reset } = useForm();
   const onSubmit = data => {
     onAddContact(data);
+    reset({
+      name: '',
+    });
   };
 
   return (
