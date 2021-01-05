@@ -28,7 +28,8 @@ img {
 }
 
 body {
-  background-color: #000000;
+  padding-top: 50px;
+  background-color: #cdba98;
 }
 
 .visually-hidden:not(:focus):not(:active),
