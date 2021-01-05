@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-hook-form-test/static/css/main.855ad8d9.chunk.css",
+    "main.js": "/react-hook-form-test/static/js/main.fb18031a.chunk.js",
+    "main.js.map": "/react-hook-form-test/static/js/main.fb18031a.chunk.js.map",
+    "runtime-main.js": "/react-hook-form-test/static/js/runtime-main.484eb2ab.js",
+    "runtime-main.js.map": "/react-hook-form-test/static/js/runtime-main.484eb2ab.js.map",
+    "static/css/2.4324847d.chunk.css": "/react-hook-form-test/static/css/2.4324847d.chunk.css",
+    "static/js/2.afd0b7c4.chunk.js": "/react-hook-form-test/static/js/2.afd0b7c4.chunk.js",
+    "static/js/2.afd0b7c4.chunk.js.map": "/react-hook-form-test/static/js/2.afd0b7c4.chunk.js.map",
+    "index.html": "/react-hook-form-test/index.html",
+    "static/css/2.4324847d.chunk.css.map": "/react-hook-form-test/static/css/2.4324847d.chunk.css.map",
+    "static/css/main.855ad8d9.chunk.css.map": "/react-hook-form-test/static/css/main.855ad8d9.chunk.css.map",
+    "static/js/2.afd0b7c4.chunk.js.LICENSE.txt": "/react-hook-form-test/static/js/2.afd0b7c4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.484eb2ab.js",
+    "static/css/2.4324847d.chunk.css",
+    "static/js/2.afd0b7c4.chunk.js",
+    "static/css/main.855ad8d9.chunk.css",
+    "static/js/main.fb18031a.chunk.js"
+  ]
+}
