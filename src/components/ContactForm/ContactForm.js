@@ -1,4 +1,4 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
@@ -36,11 +36,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ContactsForm({ onAddContact }) {
+export default function ContactsForm() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const addContact = contact => dispatch(action.addContact(contact));
   const { register, handleSubmit, watch, errors, control, reset } = useForm();
+
   const onSubmit = data => {
-    onAddContact(data);
+    addContact(data);
     reset({
       name: '',
     });
@@ -133,11 +137,3 @@ function ContactsForm({ onAddContact }) {
     </>
   );
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onAddContact: contact => dispatch(action.addContact(contact)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(ContactsForm);

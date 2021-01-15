@@ -1,6 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import * as action from '../../redux/contact-action';
+import { getContacts } from './contact-selector';
 
 const List = styled.ul`
   width: 500px;
@@ -36,12 +36,14 @@ const useStyles = makeStyles({
   },
 });
 
-function ContactsList({ onDelete, contactsArr }) {
+export default function ContactsList() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
   return (
     <List>
-      {contactsArr.map(item => (
+      {contacts.map(item => (
         <ListItem key={item.id}>
           <Card className={classes.root}>
             <CardContent>
@@ -63,7 +65,10 @@ function ContactsList({ onDelete, contactsArr }) {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" onClick={() => onDelete(item.id)}>
+              <Button
+                size="small"
+                onClick={() => dispatch(action.deleteContact(item.id))}
+              >
                 Delete Card
               </Button>
             </CardActions>
@@ -73,16 +78,3 @@ function ContactsList({ onDelete, contactsArr }) {
     </List>
   );
 }
-
-const mapStateToProps = state => {
-  return {
-    contactsArr: state.contacts,
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    onDelete: id => dispatch(action.deleteContact(id)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);
